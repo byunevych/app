@@ -1,0 +1,10 @@
+<aspectj>
+    <aspects>
+        <!--                <weaver options="-Xset:weaveJavaxPackages=true -Xreweavable verbose -showWeaveInfo"></weaver>-->
+        <weaver options="-Xset:weaveJavaxPackages=true -Xreweavable"></weaver>
+        <aspect name="com.webapp.core.aspect.LoggingAspect"/>
+<!--        <aspect name="com.epam.reportportal.aspect.StepAspect"/>-->
+        <aspect name="com.webapp.core.aspect.AllureAspectJ"/>
+<!--        <aspect name="JunitAspect"/>-->
+    </aspects>
+</aspectj>
