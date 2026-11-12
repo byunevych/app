@@ -64,7 +64,7 @@ public class AllureAttachmentHelper {
         Throwable exception = cause.getCause();
         if (exception instanceof ElementNotFound) {
             try {
-                String screenshotPath = ((ElementNotFound) exception).getScreenshot().replace(PREFIX_FILE, StrUtil.EMPTY);
+                String screenshotPath = ((ElementNotFound) exception).getScreenshot().getImage().replace(PREFIX_FILE, StrUtil.EMPTY);
                 return new File(screenshotPath).getAbsolutePath();
             } catch (NullPointerException e) {
                 return screenshot("screenshot" + Instant.now().toEpochMilli());

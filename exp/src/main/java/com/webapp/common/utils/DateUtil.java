@@ -3,15 +3,13 @@ package com.webapp.common.utils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.awaitility.Duration;
-
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static java.util.stream.Collectors.toList;
 
@@ -39,8 +37,8 @@ public final class DateUtil {
         return ldt.format(DateTimeFormatter.ofPattern(format));
     }
 
-    public static Duration convert(java.time.Duration duration) {
-        return new Duration(duration.getSeconds(), TimeUnit.SECONDS);
+    public static Duration convert(Duration duration) {
+        return Duration.ofSeconds(duration.getSeconds());
     }
 
-}
+}

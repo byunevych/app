@@ -102,7 +102,7 @@ public class AllureFileWriterUtils {
             Capabilities caps = ((RemoteWebDriver) WebDriverRunner.getWebDriver()).getCapabilities();
             Map<String, String> chromeCaps = (Map<String, String>) caps.getCapability("chrome");
 
-            saveParamToProperties("Browser", caps.getBrowserName() + StrUtil.SPACE + caps.getVersion());
+            saveParamToProperties("Browser", caps.getBrowserName() + StrUtil.SPACE + caps.getBrowserVersion());
             saveParamToProperties("Chromedriver", chromeCaps.get("chromedriverVersion").split(StrUtil.SPACE)[0]);
         }
     }

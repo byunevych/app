@@ -10,15 +10,14 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.webapp.common.utils.WaitUtils.doWait;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
-import static org.awaitility.Duration.ONE_SECOND;
+import static org.awaitility.Durations.ONE_SECOND;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JScriptUtils {
     private static final Duration WAIT_PAGE_TIMEOUT = PropertiesController.appTimeoutConfig().utilWaitTimeout();
 
     public static void loadJQuery(String fileWithPath) {
-        WebDriverRunner.getWebDriver().manage().timeouts().setScriptTimeout(WAIT_PAGE_TIMEOUT.toMillis(), MILLISECONDS);
+        WebDriverRunner.getWebDriver().manage().timeouts().scriptTimeout(WAIT_PAGE_TIMEOUT);
         executeJavaScript(getScript(fileWithPath));
         waitForJQueryLoaded();
     }
@@ -40,4 +39,4 @@ public class JScriptUtils {
         executeJavaScript("arguments[0].scrollIntoView();", element);
         return element;
     }
-}
+}

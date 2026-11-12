@@ -1,6 +1,7 @@
 package com.webapp.common.widgets;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.WebElementCondition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import com.webapp.common.browser.BrowserPageActions;
@@ -28,12 +29,12 @@ public class Widget<T extends Widget> {
         return self;
     }
 
-    public T shouldBe(Condition condition) {
+    public T shouldBe(WebElementCondition condition) {
         self.shouldBe(condition);
         return (T) this;
     }
 
-    public T shouldNotBe(Condition condition) {
+    public T shouldNotBe(WebElementCondition condition) {
         self.shouldNotBe(condition);
         return (T) this;
     }

@@ -1,6 +1,6 @@
 package com.webapp.common.utils;
 
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,4 +14,4 @@ public final class FakeUtil {
         return faker.regexify("[a-z0-9]{10}");
     }
 
-}
+}

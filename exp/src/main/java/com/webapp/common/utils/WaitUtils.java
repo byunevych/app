@@ -19,7 +19,7 @@ import java.util.function.Predicate;
 import static com.webapp.common.utils.DateUtil.convert;
 import static com.webapp.common.utils.StrUtil.EMPTY;
 import static org.awaitility.Awaitility.await;
-import static org.awaitility.Duration.ONE_SECOND;
+import static org.awaitility.Durations.ONE_SECOND;
 
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -104,4 +104,4 @@ public final class WaitUtils {
                 .pollInterval(convert(pollInterval))
                 .pollDelay(ONE_SECOND);    // skip waiting at 1st iteration
     }
-}
+}
